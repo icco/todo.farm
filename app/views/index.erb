@@ -1,3 +1,7 @@
-<a href="<%= url_for(:day, :day => @tomorrow.day, :month => @tomorrow.month, :year => @tomorrow.year) %>">Tomorrow</a>
-<a href="<%= url_for(:day, :day => @day.day, :month => @day.month, :year => @day.year) %>">Today</a>
-<a href="<%= url_for(:day, :day => @yesterday.day, :month => @yesterday.month, :year => @yesterday.year) %>">Yesterday</a>
+<ul class="navigation">
+  <li>&lt; <a href="<%= url_for(:day, :day => @tomorrow.day, :month => @tomorrow.month, :year => @tomorrow.year) %>">Tomorrow</a></li>
+  |
+  <li><a href="<%= url_for(:day, :day => @day.day, :month => @day.month, :year => @day.year) %>">Today</a></li>
+  |
+  <li><a href="<%= url_for(:day, :day => @yesterday.day, :month => @yesterday.month, :year => @yesterday.year) %>">Yesterday</a> &gt;</li>
+</ul>
