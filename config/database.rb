@@ -1,35 +1,35 @@
 ##
-# You can use other adapters like:
-#
-#   ActiveRecord::Base.configurations[:development] = {
-#     :adapter   => 'mysql2',
-#     :encoding  => 'utf8',
-#     :reconnect => true,
-#     :database  => 'your_database',
-#     :pool      => 5,
-#     :username  => 'root',
-#     :password  => '',
-#     :host      => 'localhost',
-#     :socket    => '/tmp/mysql.sock'
-#   }
-#
-ActiveRecord::Base.configurations[:development] = {
-  :adapter => 'sqlite3',
-  :database => Padrino.root('db', 'brain_child_development.db')
+# Database config for relational db.
+init = Time.now
+connections = {
+  :development => "postgres://#{ENV['USER']}@localhost/dungeontracker",
+  :test => "postgresql://go:go@localhost:5432/app_test",
+  :production => ENV['DATABASE_URL'],
+}.delete_if {|k, v| v.nil? }
 
-}
+connections.each do |k, v|
+  # ActiveRecord doesn't parse all DB URIs correctly.
+  url = URI(v)
+  options = {
+    :adapter => url.scheme,
+    :host => url.host,
+    :port => url.port,
+    :database => url.path[1..-1],
+    :username => url.user,
+    :password => url.password
+  }
 
-ActiveRecord::Base.configurations[:production] = {
-  :adapter => 'sqlite3',
-  :database => Padrino.root('db', 'brain_child_production.db')
-
-}
-
-ActiveRecord::Base.configurations[:test] = {
-  :adapter => 'sqlite3',
-  :database => Padrino.root('db', 'brain_child_test.db')
-
-}
+  # Translate URIs if ActiveRecord does weird things
+  case url.scheme
+  when "sqlite"
+    options[:adapter] = "sqlite3"
+    options[:database] = url.host + url.path
+  when "postgres"
+    options[:adapter] = "postgresql"
+  end
+  connections[k] = options
+end
+ActiveRecord::Base.configurations = connections
 
 # Setup our logger
 ActiveRecord::Base.logger = logger
@@ -43,7 +43,7 @@ if ActiveRecord::VERSION::MAJOR.to_i < 4
   ActiveRecord::Base.auto_explain_threshold_in_seconds = 0.5
 end
 
-# Doesn't include Active Record class name as root for JSON serialized output.
+# Include Active Record class name as root for JSON serialized output.
 ActiveRecord::Base.include_root_in_json = false
 
 # Store the full class name (including module namespace) in STI type column.
@@ -56,8 +56,19 @@ ActiveSupport.use_standard_json_time_format = true
 # if you're including raw JSON in an HTML page.
 ActiveSupport.escape_html_entities_in_json = false
 
-# Now we can establish connection with our db.
-ActiveRecord::Base.establish_connection(ActiveRecord::Base.configurations[Padrino.env])
-
 # Timestamps are in the utc by default.
 ActiveRecord::Base.default_timezone = :utc
+
+# Now we can estabilish connection with our db
+if ActiveRecord::Base.configurations[Padrino.env]
+  options = ActiveRecord::Base.configurations[Padrino.env]
+
+  # Log what we are connecting to.
+  logger.bench "DB", init, "#{options.inspect}", :devel, :green
+
+  # Actually connect.
+  ActiveRecord::Base.establish_connection(options)
+else
+  msg = "No database configuration for #{Padrino.env.inspect}"
+  logger.bench "DB", init, msg, :fatal, :red
+end
