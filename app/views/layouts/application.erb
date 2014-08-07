@@ -4,13 +4,22 @@
     <title>Brain Child</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
-    <%= stylesheet_link_tag 'toast' %>
-    <%= stylesheet_link_tag 'style' %>
+    <%= stylesheet_link_tag 'application' %>
 
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
   </head>
   <body>
+    <div class="container" role="main">
+      <div class="grid">
+        <header class="unit span-grid" role="banner">
+        </header>
+
+        <hr class="unit span-grid">
+
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>
