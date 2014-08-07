@@ -1,7 +1,8 @@
 <h1><%= @day.strftime "%Y/%-m/%-d" %></h1>
-<ul>
-  <li><a href="<%= url_for(:day, :day => @yesterday.day, :month => @yesterday.month, :year => @yesterday.year) %>">Previous Day</a></li>
-  <li><a href="<%= url_for(:day, :day => @tomorrow.day, :month => @tomorrow.month, :year => @tomorrow.year) %>">Next Day</a></li>
+<ul class="navigation">
+  <li>&lt; <a href="<%= url_for(:day, :day => @yesterday.day, :month => @yesterday.month, :year => @yesterday.year) %>">Previous Day</a></li>
+  |
+  <li><a href="<%= url_for(:day, :day => @tomorrow.day, :month => @tomorrow.month, :year => @tomorrow.year) %>">Next Day</a> &gt;</li>
 </ul>
 
 <ul>
