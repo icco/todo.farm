@@ -1,0 +1,84 @@
+/*
+Syntax error: Invalid CSS after "material_red ": expected "{", was "= "#e51c23""
+        on line 1 of /Users/natwelch/Projects/brain_child/app/css/style.scss
+
+1: material_red = "#e51c23"
+2: material_pink = "#e91e63"
+3: material_purple = "#9c27b0"
+4: material_deep_purple = "#673ab7"
+5: material_indigo = "#3f51b5"
+6: material_blue = "#5677fc"
+
+Backtrace:
+/Users/natwelch/Projects/brain_child/app/css/style.scss:1
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/sass-3.3.7/lib/sass/scss/parser.rb:1312:in `expected'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/sass-3.3.7/lib/sass/scss/parser.rb:1248:in `expected'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/sass-3.3.7/lib/sass/scss/parser.rb:1243:in `tok!'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/sass-3.3.7/lib/sass/scss/parser.rb:640:in `block'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/sass-3.3.7/lib/sass/scss/parser.rb:634:in `ruleset'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/sass-3.3.7/lib/sass/scss/parser.rb:659:in `block_child'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/sass-3.3.7/lib/sass/scss/parser.rb:649:in `block_contents'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/sass-3.3.7/lib/sass/scss/parser.rb:116:in `stylesheet'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/sass-3.3.7/lib/sass/scss/parser.rb:41:in `parse'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/sass-3.3.7/lib/sass/engine.rb:409:in `_to_tree'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/sass-3.3.7/lib/sass/engine.rb:274:in `render'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/sass-3.3.7/lib/sass/plugin/compiler.rb:414:in `update_stylesheet'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/sass-3.3.7/lib/sass/plugin/compiler.rb:189:in `block in update_stylesheets'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/sass-3.3.7/lib/sass/plugin/compiler.rb:186:in `each'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/sass-3.3.7/lib/sass/plugin/compiler.rb:186:in `update_stylesheets'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/sass-3.3.7/lib/sass/plugin.rb:82:in `update_stylesheets'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/sass-3.3.7/lib/sass/plugin.rb:54:in `check_for_updates'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/sass-3.3.7/lib/sass/plugin/rack.rb:51:in `call'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/rack-protection-1.5.3/lib/rack/protection/base.rb:49:in `call'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/rack-protection-1.5.3/lib/rack/protection/xss_header.rb:18:in `call'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/rack-protection-1.5.3/lib/rack/protection/base.rb:49:in `call'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/rack-protection-1.5.3/lib/rack/protection/base.rb:49:in `call'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/rack-protection-1.5.3/lib/rack/protection/json_csrf.rb:18:in `call'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/rack-protection-1.5.3/lib/rack/protection/base.rb:49:in `call'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/rack-protection-1.5.3/lib/rack/protection/base.rb:49:in `call'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/rack-protection-1.5.3/lib/rack/protection/frame_options.rb:31:in `call'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/rack-1.5.2/lib/rack/head.rb:11:in `call'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/rack-1.5.2/lib/rack/methodoverride.rb:21:in `call'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/padrino-core-0.12.2/lib/padrino-core/reloader/rack.rb:22:in `call'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/padrino-core-0.12.2/lib/padrino-core/logger.rb:420:in `call'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/sinatra-1.4.5/lib/sinatra/show_exceptions.rb:21:in `call'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/rack-1.5.2/lib/rack/session/abstract/id.rb:225:in `context'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/rack-1.5.2/lib/rack/session/abstract/id.rb:220:in `call'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/sinatra-1.4.5/lib/sinatra/base.rb:2014:in `call'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/sinatra-1.4.5/lib/sinatra/base.rb:1478:in `block in call'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/sinatra-1.4.5/lib/sinatra/base.rb:1788:in `synchronize'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/sinatra-1.4.5/lib/sinatra/base.rb:1478:in `call'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/padrino-core-0.12.2/lib/padrino-core/router.rb:84:in `block in call'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/padrino-core-0.12.2/lib/padrino-core/router.rb:75:in `each'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/padrino-core-0.12.2/lib/padrino-core/router.rb:75:in `call'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/rack-1.5.2/lib/rack/lint.rb:49:in `_call'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/rack-1.5.2/lib/rack/lint.rb:37:in `call'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/rack-1.5.2/lib/rack/showexceptions.rb:24:in `call'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/rack-1.5.2/lib/rack/commonlogger.rb:33:in `call'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/sinatra-1.4.5/lib/sinatra/base.rb:217:in `call'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/shotgun-0.9/lib/shotgun/loader.rb:86:in `proceed_as_child'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/shotgun-0.9/lib/shotgun/loader.rb:31:in `call!'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/shotgun-0.9/lib/shotgun/loader.rb:18:in `call'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/shotgun-0.9/lib/shotgun/favicon.rb:12:in `call'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/shotgun-0.9/lib/shotgun/static.rb:14:in `call'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/rack-1.5.2/lib/rack/builder.rb:138:in `call'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/thin-1.6.2/lib/thin/connection.rb:86:in `block in pre_process'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/thin-1.6.2/lib/thin/connection.rb:84:in `catch'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/thin-1.6.2/lib/thin/connection.rb:84:in `pre_process'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/thin-1.6.2/lib/thin/connection.rb:53:in `process'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/thin-1.6.2/lib/thin/connection.rb:39:in `receive_data'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/eventmachine-1.0.3/lib/eventmachine.rb:187:in `run_machine'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/eventmachine-1.0.3/lib/eventmachine.rb:187:in `run'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/thin-1.6.2/lib/thin/backends/base.rb:73:in `start'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/thin-1.6.2/lib/thin/server.rb:162:in `start'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/rack-1.5.2/lib/rack/handler/thin.rb:16:in `run'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/gems/shotgun-0.9/bin/shotgun:156:in `<top (required)>'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/bin/shotgun:23:in `load'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/bin/shotgun:23:in `<main>'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/bin/ruby_executable_hooks:15:in `eval'
+/Users/natwelch/.rvm/gems/ruby-2.1.1/bin/ruby_executable_hooks:15:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Invalid CSS after \"material_red \": expected \"{\", was \"= \"#e51c23\"\"\A         on line 1 of /Users/natwelch/Projects/brain_child/app/css/style.scss\A \A 1: material_red = \"#e51c23\"\A 2: material_pink = \"#e91e63\"\A 3: material_purple = \"#9c27b0\"\A 4: material_deep_purple = \"#673ab7\"\A 5: material_indigo = \"#3f51b5\"\A 6: material_blue = \"#5677fc\""; }
