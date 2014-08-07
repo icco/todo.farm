@@ -1,0 +1,13 @@
+<h1><%= @day %></h1>
+
+<ul>
+  <% @lines.each do |line| %>
+    <li><%= line.text %></li>
+    <div class="note"><%= line.note %></div>
+  <% end %>
+
+  <% form_tag url_for(:day, :day => @day.day, :month => @day.month, :year => @day.year), :method => 'post', :class => '' do %>
+    <li><input type="text" name="line"></li>
+    <textarea name="note"></textarea>
+  <% end %>
+</ul>

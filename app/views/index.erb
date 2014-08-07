@@ -1,7 +1,1 @@
-<ul>
-  <li>Thing one</li>
-  <div class="thoughts">
-    blah blah blah. blah blah. blah blah. blah blah. blah blah.
-  </div>
-  <li>Thing two</li>
-</ul>
+<a href="<%= url_for(:day, :day => @day.day, :month => @day.month, :year => @day.year) %>"><%= @day %></a>
