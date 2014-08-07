@@ -14,6 +14,14 @@ module BrainChild
 
         markdown.render(text.to_s)
     end
+
+    def days year, month, day
+      now = Time.utc(year, month, day)
+      yesterday = now - 86400
+      tomorrow = now + 86400
+
+      return [yesterday, now, tomorrow]
+    end
   end
 end
 

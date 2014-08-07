@@ -1,4 +1,8 @@
-<h1><%= @day %></h1>
+<h1><%= @day.strftime "%Y/%-m/%-d" %></h1>
+<ul>
+  <li><a href="<%= url_for(:day, :day => @yesterday.day, :month => @yesterday.month, :year => @yesterday.year) %>">Previous Day</a></li>
+  <li><a href="<%= url_for(:day, :day => @tomorrow.day, :month => @tomorrow.month, :year => @tomorrow.year) %>">Next Day</a></li>
+</ul>
 
 <ul>
   <% @lines.each do |line| %>
@@ -9,5 +13,6 @@
   <% form_tag url_for(:day, :day => @day.day, :month => @day.month, :year => @day.year), :method => 'post', :class => '' do %>
     <li><input type="text" name="line"></li>
     <textarea name="note"></textarea>
+    <input type="submit">
   <% end %>
 </ul>
