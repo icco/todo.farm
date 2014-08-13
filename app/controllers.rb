@@ -22,4 +22,14 @@ BrainChild::App.controllers  do
 
     redirect url_for(:day, :day => @day.day, :month => @day.month, :year => @day.year)
   end
+
+  post :save do
+    type, id = params["id"].split("-")
+    type = Line.parse_type(type)
+    line = Line.where(id: id.to_i).first
+    line.set_text(type, params["value"])
+    line.save
+
+    line.send(type)
+  end
 end
